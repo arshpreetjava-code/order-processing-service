@@ -86,7 +86,7 @@ public class ListenerService {
     private void tryProcess(String orderId) {
         OrderStatus status = orderStatusMap.get(orderId);
         if (status != null && status.isPaymentDone() && status.getOrderEvent() != null) {
-            log.info("Processing order {}", orderId);
+            log.info("Order has been processed and send to Food Service {}", orderId);
             kafkaTemplate.send(ORDER_PROCESSED, status.getOrderEvent());
             orderStatusMap.remove(orderId);
         } else {
