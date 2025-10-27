@@ -34,7 +34,7 @@ public class ListenerService {
 
         OrderStatus status = orderStatusMap.computeIfAbsent(orderId, id -> new OrderStatus());
         status.setOrderEvent(orderEvent);
-        log.info("Order created received for {}", orderId);
+        log.info("Order received at Sec 21, CHD and sent for processing to  for {}", orderId);
 
         ack.acknowledge();
 
@@ -48,7 +48,7 @@ public class ListenerService {
 
         OrderStatus status = orderStatusMap.computeIfAbsent(orderId, id -> new OrderStatus());
         status.setOrderEvent(orderEvent);
-        log.info("Order created received for {}", orderId);
+        log.info("Order received at Sec 22, CHD and sent for processing to  for {}", orderId);
 
         ack.acknowledge();
 
@@ -62,7 +62,7 @@ public class ListenerService {
 
         OrderStatus status = orderStatusMap.computeIfAbsent(orderId, id -> new OrderStatus());
         status.setOrderEvent(orderEvent);
-        log.info("Order created received for {}", orderId);
+        log.info("Order received at Sec 23, CHD and sent for processing to  for {}", orderId);
 
         ack.acknowledge();
 
