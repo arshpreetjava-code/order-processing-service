@@ -40,7 +40,7 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > order-processing_key.pem
           chmod 600 order-processing_key.pem
-          ssh -o StrictHostKeyChecking=no -i order-processing_key.pem ${{ secrets.EC2_HOSTNAME }}@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i order-processing_key.pem ubuntu@ec2-52-66-8-103.ap-south-1.compute.amazonaws.com << 'EOF'
             sudo docker pull userbeta/order-processing-service:1.0.0
             sudo docker stop order-processing-service || true
             sudo docker rm order-processing-service || true
