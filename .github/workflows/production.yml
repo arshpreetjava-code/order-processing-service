@@ -46,8 +46,6 @@ jobs:
             sudo docker rm order-processing-service || true
             sudo docker run -d \
               --name order-processing-service \
-              -p 8080:8080 \
-              -e BOOTSTRAP_SERVER=${{ secrets.BOOTSTRAP_SERVER }} \
-              -e GROUP_ID=${{ secrets.GROUP_ID }} \
+              -p 8082:8080 \
               userbeta/order-processing-service:1.0.0
           EOF
